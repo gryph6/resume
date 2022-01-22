@@ -1,0 +1,6 @@
+*.out
+*.log
+*.aux
+*.bcf
+*.run.xml
+*xmpi
