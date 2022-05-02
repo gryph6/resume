@@ -1,206 +1,92 @@
-%%%%%%%%%%%%%%%%%
-% This is an sample CV template created using altacv.cls
-% (v1.6.4, 13 Nov 2021) written by LianTze Lim (liantze@gmail.com). Now compiles with pdfLaTeX, XeLaTeX and LuaLaTeX.
-%
-%% It may be distributed and/or modified under the
-%% conditions of the LaTeX Project Public License, either version 1.3
-%% of this license or (at your option) any later version.
-%% The latest version of this license is in
-%%    http://www.latex-project.org/lppl.txt
-%% and version 1.3 or later is part of all distributions of LaTeX
-%% version 2003/12/01 or later.
-%%%%%%%%%%%%%%%%
+%-------------------------------------------------------------------------------
+% CONFIGURATIONS
+%-------------------------------------------------------------------------------
+% A4 paper size by default, use 'letterpaper' for US letter
+\documentclass[11pt, letterpaper]{awesome-cv}
 
-%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
-% \documentclass[10pt,a4paper,normalphoto]{altacv}
+% Configure page margins with geometry
+\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
 
-\documentclass[10pt,letterpaper,ragged2e,withhyper]{altacv}
-%% AltaCV uses the fontawesome5 and packages.
-%% See http://texdoc.net/pkg/fontawesome5 for full list of symbols.
+% Specify the location of the included fonts
+\fontdir[fonts/]
 
-% Change the page layout if you need to
-\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+% Color for highlights
+% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
+%                 awesome-nephritis, awesome-concrete, awesome-darknight
+\colorlet{awesome}{awesome-red}
+% Uncomment if you would like to specify your own color
+\definecolor{awesome}{HTML}{000000}
 
-% The paracol package lets you typeset columns of text in parallel
-\usepackage{paracol}
+% Colors for text
+% Uncomment if you would like to specify your own color
+% \definecolor{darktext}{HTML}{414141}
+% \definecolor{text}{HTML}{333333}
+% \definecolor{graytext}{HTML}{5D5D5D}
+% \definecolor{lighttext}{HTML}{999999}
+% \definecolor{sectiondivider}{HTML}{5D5D5D}
+\definecolor{darktext}{HTML}{000000}
+\definecolor{text}{HTML}{000000}
+\definecolor{graytext}{HTML}{000000}
+\definecolor{lighttext}{HTML}{000000}
+\definecolor{sectiondivider}{HTML}{000000}
 
-% Change the font if you want to, depending on whether
-% you're using pdflatex or xelatex/lualatex
-\ifxetexorluatex
-  % If using xelatex or lualatex:
-  \setmainfont{Roboto Slab}
-  \setsansfont{Lato}
-  \renewcommand{\familydefault}{\sfdefault}
-\else
-  % If using pdflatex:
-  \usepackage[rm]{roboto}
-  \usepackage[defaultsans]{lato}
-  % \usepackage{sourcesanspro}
-  \renewcommand{\familydefault}{\sfdefault}
-\fi
+% Set false if you don't want to highlight section with awesome color
+\setbool{acvSectionColorHighlight}{false}
 
-% Change the colours if you want to
-\definecolor{SlateGrey}{HTML}{2E2E2E}
-\definecolor{LightGrey}{HTML}{666666}
-\definecolor{DarkPastelRed}{HTML}{002b36}
-\definecolor{PastelRed}{HTML}{586e75}
-\definecolor{GoldenEarth}{HTML}{EEE8D5}
-\colorlet{name}{black}
-\colorlet{tagline}{PastelRed}
-\colorlet{heading}{DarkPastelRed}
-\colorlet{headingrule}{GoldenEarth}
-\colorlet{subheading}{PastelRed}
-\colorlet{accent}{PastelRed}
-\colorlet{emphasis}{SlateGrey}
-\colorlet{body}{LightGrey}
-
-% Change some fonts, if necessary
-\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
-\renewcommand{\personalinfofont}{\footnotesize}
-\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
-\renewcommand{\cvsubsectionfont}{\large\bfseries}
+% If you would like to change the social information separator from a pipe (|) to something else
+\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
 
 
-% Change the bullets for itemize and rating marker
-% for \cvskill if you want to
-\renewcommand{\itemmarker}{{\small\textbullet}}
-\renewcommand{\ratingmarker}{\faCircle}
+%-------------------------------------------------------------------------------
+%	PERSONAL INFORMATION
+%	Comment any of the lines below if they are not required
+%-------------------------------------------------------------------------------
+% Available options: circle|rectangle,edge/noedge,left/right
+% \photo[rectangle,edge,right]{./examples/profile}
+\name{Griffin Solimini}{}
+\address{1849 S King St. Seattle, WA 98144}
 
-%% Use (and optionally edit if necessary) this .cfg if you
-%% want to use an author-year reference style like APA(6)
-%% for your publication list
-\input{pubs-authoryear.cfg}
+\mobile{513-535-1392}
+\email{griffin.solimini@gmail.com}
 
-%% Use (and optionally edit if necessary) this .cfg if you
-%% want an originally numerical reference style like IEEE
-%% for your publication list
-% \input{pubs-num.cfg}
+%\dateofbirth{January 1st, 1970}
+% \homepage{www.posquit0.com}
+% \github{posquit0}
+\linkedin{griffin-solimini-25571062}
+% \gitlab{gitlab-id}
+% \stackoverflow{SO-id}{SO-name}
+% \twitter{@twit}
+% \skype{skype-id}
+% \reddit{reddit-id}
+% \medium{madium-id}
+% \kaggle{kaggle-id}
+% \googlescholar{googlescholar-id}{name-to-display}
+%% \firstname and \lastname will be used
+% \googlescholar{googlescholar-id}{}
+% \extrainfo{extra information}
 
-%% sample.bib contains your publications
-\addbibresource{sample.bib}
-
+%-------------------------------------------------------------------------------
 \begin{document}
-\name{Griffin Solimini}
-\tagline{Software Engineer}
 
-\personalinfo{%
-  % Not all of these are required!
-  \email{griffin.solimini@gmail.com}
-  \phone{513-535-1392}
-  \mailaddress{1849 South King St. Seattle, WA 98144}
-  \github{gryph6}
-  %% You can add your own arbitrary detail with
-  %% \printinfo{symbol}{detail}[optional hyperlink prefix]
-  % \printinfo{\faPaw}{Hey ho!}[https://example.com/]
-  %% Or you can declare your own field with
-  %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
-  % \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
-  % \gitlab{your_id}
-  %%
-  %% For services and platforms like Mastodon where there isn't a
-  %% straightforward relation between the user ID/nickname and the hyperlink,
-  %% you can use \printinfo directly e.g.
-  % \printinfo{\faMastodon}{@username@instace}[https://instance.url/@username]
-  %% But if you absolutely want to create new dedicated info fields for
-  %% such platforms, then use \NewInfoField* with a star:
-  % \NewInfoField*{mastodon}{\faMastodon}
-  %% then you can use \mastodon, with TWO arguments where the 2nd argument is
-  %% the full hyperlink.
-  % \mastodon{@username@instance}{https://instance.url/@username}
-}
+% Print the header with above personal information
+% Give optional argument to change alignment(C: center, L: left, R: right)
+\makecvheader[C]
 
-\makecvheader
-%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
-% \AtBeginEnvironment{itemize}{\small}
+% Print the footer with 3 arguments(<left>, <center>, <right>)
+% Leave any of these blank if they are not needed
+\makecvfooter
+  {Griffin Solimini}
+  {}
+  {\today}
 
-%% Set the left/right column width ratio to 6:4.
-\columnratio{0.6}
+%-------------------------------------------------------------------------------
+%	CV/RESUME CONTENT
+%	Each section is imported separately, open each file in turn to modify content
+%-------------------------------------------------------------------------------
+\input{sections/summary.tex}
+\input{sections/experience.tex}
+\input{sections/projects.tex}
+\input{sections/education.tex}
 
-% Start a 2-column paracol. Both the left and right columns will automatically
-% break across pages if things get too long.
-\begin{paracol}{2}
-\cvsection{Experience}
-
-\cvevent{Software Engineer 2}{Microsoft - Xbox Game Pass}{Sept. 2019 -- Present}{Redmond, WA}
-\begin{itemize}
-\item Windows OOBE
-\item EA / Ubisoft / Third Party
-\item Infrastructure
-\end{itemize}
-
-\divider
-
-\cvevent{Software Engineer}{Microsoft - Xbox Game Pass}{Nov. 2018 -- Sept. 2019}{Redmond, WA}
-\begin{itemize}
-\item Worked on a variety of launch critical user facing features for the first version of the Xbox application for PC, as well as features supporting the launch of Game Pass on PC. Integrated an issue filing system, implemented the settings modal view, added game uninstall capabilities, and library drag-and-drop functionality.
-\item Created and owned the subscription page for the Xbox application, the primary source for in-application user acquisition and retention. Implemented the UI, added telemetry/reporting,  
-\end{itemize}
-
-\divider
-
-\cvevent{Program Manager}{Microsoft - Silicon, Graphics, and Media}{Sept. 2017 -- Nov. 2018}{Redmond, WA}
-\begin{itemize}
-\item Co-lead the relationship with Qualcomm, tracking bugs and validating incoming software, and helped manage code flow externally back to Qualcomm. Helped to keep the working relationship efficient and well documented to internal/external partners in order to develop and deliver a high quality product to our vertical teams.
-\item Delivered a specification, cost estimate, and schedule for the Offline Crash Dump feature as part of the Redstone 2 milestone. Offline Crash Dump will provide telemetry for developers to more effectively analyze device failures and successfully debug them.
-\end{itemize}
-
-\divider
-
-\cvevent{Software Developer (Part Time)}{Ohio State University}{Apr. 2015 -- Dec. 2017}{Columbus, OH}
-\begin{itemize}
-\item Developed user facing features and fixed bugs on the "OSU Mobile" application, for both iOS and Android platforms. Focused on "News" and "Events" features. 
-\item Code modernization including updating legacy code from Objective C to Swift.
-\end{itemize}
-
-% use ONLY \newpage if you want to force a page break for
-% ONLY the current column
-% \newpage
-
-%% Switch to the right column. This will now automatically move to the second
-%% page if the content is too long.
-\switchcolumn
-
-\cvsection{Education}
-
-\cvevent{BS in Computer Science}{Ohio State University}{Aug. 2013 -- May 2017}{}
-\begin{itemize}
-\item 3.93 GPA, Summa Cum Laude with Honors Distinction
-\item Eminence Fellowship \& Full Scholarship
-\end{itemize}
-
-% \divider
-
-\cvsection{Projects}
-
-\cvevent{Keyboard PCB}{}{}{}
-\begin{itemize}
-\item Details
-\end{itemize}
-
-\divider
-
-\cvevent{CHIP-8 Emulator}{}{}{}
-A short abstract would also work.
-
-\medskip
-
-\cvsection{Languages / Frameworks}
-
-\cvtag{C++}
-\cvtag{Typescript/Javascript}\\
-\cvtag{React Native}
-\cvtag{React Native for Windows}
-\cvtag{C++/WinRT}
-
-\medskip
-
-\cvsection{Hobbies}
-
-\cvtag{Cooking}
-\cvtag{Bass Guitar}
-\cvtag{Weight Training}\\
-\cvtag{Video Games}
-
-\end{paracol}
-
+%-------------------------------------------------------------------------------
 \end{document}
