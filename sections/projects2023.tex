@@ -1,0 +1,53 @@
+%-------------------------------------------------------------------------------
+%	SECTION TITLE
+%-------------------------------------------------------------------------------
+\cvsection{Skill Development Projects}
+
+%-------------------------------------------------------------------------------
+%	CONTENT
+%-------------------------------------------------------------------------------
+\begin{cventries}
+
+%---------------------------------------------------------
+  \cventry
+    {Wireless Headset Conversion Kit} % Project title
+    {}
+    {}
+    {https://github.com/gryph6/headset}
+    {
+      \begin{cvitems} % Description
+        \item {Building a USB dongle and headphone adapter kit to convert wired studio headphones into a wireless headset for gaming or work.} 
+        \item {Prototyping on a pair of RP2040 Pico boards, using I2C and SPI to interface with display and RF modules. Implementing the host-side dongle as a class compliant UAC2.0 device.}
+        \item {Currently working on migrating over to an STM32F411CEU6 to take advantage of its I2S peripherals (for interfacing with a DAC module) and faster Cortex-M4.} 
+      \end{cvitems}
+    }
+%---------------------------------------------------------
+  \cventry
+    {Keyboard PCB} % Project title
+    {}
+    {}
+    {https://github.com/gryph6/keyboard}
+    {
+      \begin{cvitems} % Description
+        \item {Designed and built a keyboard PCB using an ATMEGA32u4 microcontroller.} 
+        \item {Supports 68 keys, a rotary encoder, an OLED display, and USB2 over a USBC port.}
+        \item {Designed the schematics in KiCad, selected components, worked with PCBWay to fabricate and assemble the PCB, and utilized QMK framework to customize and flash firmware.}
+      \end{cvitems}
+    }
+%---------------------------------------------------------
+  \cventry
+    {CHIP-8 Emulator} % Project title
+    {}
+    {}
+    {https://github.com/gryph6/Griff-8}
+    {
+      \begin{cvitems} % Description
+      \item {Building a CHIP-8 emulator in C++ (https://wikipedia.org/wiki/CHIP-8).}
+        \item{Implemented virtual memory, registry, stack, and 35 opcodes in order to build a working emulator utilizing Direct2D for graphics.}
+        \item{Capable of passing a community ROM test, and can play several games.}
+        \item {Next steps include adding support for more games, code cleanup, and adding SUPER-CHIP-8 opcode support.}
+      \end{cvitems}
+    }
+%---------------------------------------------------------
+\end{cventries}
+
