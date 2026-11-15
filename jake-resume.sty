@@ -1,0 +1,38 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{jake-resume}[2026/11/14 Jake-style resume layout]
+% Original implementation inspired by https://github.com/jakegut/resume
+\RequirePackage[margin=0.5in]{geometry}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{titlesec}
+\RequirePackage{enumitem}
+\RequirePackage[hidelinks]{hyperref}
+\RequirePackage{iftex}
+\ifPDFTeX
+\input{glyphtounicode}
+\pdfgentounicode=1
+\fi
+\pagestyle{empty}
+\urlstyle{same}
+\raggedright
+\raggedbottom
+\setlength{\parindent}{0pt}
+\setlength{\tabcolsep}{0pt}
+\titleformat{\section}{\large\scshape\raggedright}{}{0pt}{}[\titlerule]
+\titlespacing*{\section}{0pt}{10pt}{5pt}
+% Compatibility with the existing section files and archived Awesome CV resume.
+\newcommand{\cvsection}[1]{\section{#1}}
+\newenvironment{cvparagraph}{\begingroup\small}{\par\endgroup}
+\newenvironment{cventries}{\begin{itemize}[leftmargin=0.15in,label={},itemsep=7pt,topsep=0pt]}{\end{itemize}}
+\newenvironment{cvitems}{\begin{itemize}[leftmargin=0.18in,label=\textbullet,itemsep=1pt,parsep=0pt,topsep=3pt]\small}{\end{itemize}}
+\newcommand{\cventry}[5]{%
+\item
+\if\relax\detokenize{#2}\relax
+{\small\textbf{#1}\hfill\href{#4}{\textit{\nolinkurl{#4}}}\par}%
+\else
+\begin{tabular*}{\linewidth}{@{}l@{\extracolsep{\fill}}r@{}}
+\textbf{#1} & #4 \\
+\textit{\small #2} & \textit{\small #3}
+\end{tabular*}\par
+\fi
+#5
+}
